@@ -2,149 +2,347 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChefBit - AI-Powered Cooking Made Simple | Transform Your Kitchen Experience</title>
-    <meta name="description" content="Discover the future of cooking with ChefBit's AI assistant. Generate personalized recipes, find dishes by ingredients, and cook with confidence. Download now on Google Play.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
     
+    <!-- Primary Meta Tags -->
+    <title>ChefBit - AI Recipe Generator & Smart Cooking Assistant | Download Now</title>
+    <meta name="title" content="ChefBit - AI Recipe Generator & Smart Cooking Assistant | Download Now">
+    <meta name="description" content="Transform your cooking with ChefBit's AI-powered recipe generator. Get personalized recipes, smart meal planning, and step-by-step cooking guidance. Download free on Google Play Store.">
+    <meta name="keywords" content="AI recipe generator, cooking app, meal planning, recipe finder, cooking assistant, food app, kitchen helper, recipe app, cooking AI, meal prep">
+    <meta name="author" content="S2P2 Creations">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chefbit.in/">
+    <meta property="og:title" content="ChefBit - AI Recipe Generator & Smart Cooking Assistant">
+    <meta property="og:description" content="Transform your cooking with ChefBit's AI-powered recipe generator. Get personalized recipes instantly!">
+    <meta property="og:image" content="https://chefbit.in/images/chefbit-social-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ChefBit">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chefbit.in/">
+    <meta property="twitter:title" content="ChefBit - AI Recipe Generator & Smart Cooking Assistant">
+    <meta property="twitter:description" content="Transform your cooking with ChefBit's AI-powered recipe generator. Get personalized recipes instantly!">
+    <meta property="twitter:image" content="https://chefbit.in/images/chefbit-social-preview.jpg">
+    <meta property="twitter:creator" content="@chefbitapp">
+
+    <!-- App Store -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ChefBit">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#FF6B35">
+    <meta name="msapplication-TileColor" content="#FF6B35">
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/logo-1.png">
-    
-    <!-- Google Fonts -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo-1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo-1.png">
+    <link rel="apple-touch-icon" href="images/logo-1.png">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Three.js Particle Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ChefBit",
+        "description": "AI-powered recipe generator and cooking assistant app",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Android",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.chefbit.in",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "S2P2 Creations"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "50"
+        }
+    }
+    </script>
+
+    <!-- Google Analytics (replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+    </script>
 </head>
 <body>
-    <!-- Subtle Background Pattern -->
-    <div class="bg-pattern"></div>
+    <!-- Particle Background -->
+    <div id="particle-canvas"></div>
     
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="images/logo-1.png" alt="ChefBit Loading">
+            </div>
+            <div class="loading-text">Cooking up something amazing...</div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <button class="fab-main" aria-label="Quick Actions">
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="fab-options">
+            <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" class="fab-option" data-tooltip="Download App">
+                <i class="fab fa-google-play"></i>
+            </a>
+            <a href="#demo" class="fab-option" data-tooltip="Watch Demo">
+                <i class="fas fa-play"></i>
+            </a>
+            <a href="#contact" class="fab-option" data-tooltip="Contact Us">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="float-element float-1">🍳</div>
+        <div class="float-element float-2">🥘</div>
+        <div class="float-element float-3">🍽️</div>
+        <div class="float-element float-4">👨‍🍳</div>
+        <div class="float-element float-5">🔥</div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#" class="logo">
-                    <img src="images/logo-1.png" alt="ChefBit Logo" class="logo-img">
-                    <span class="logo-text">ChefBit</span>
+                <a href="#" class="logo" aria-label="ChefBit Home">
+                    <div class="logo-container">
+                        <img src="images/logo-1.png" alt="ChefBit Logo" class="logo-img">
+                        <span class="logo-text">ChefBit</span>
+                    </div>
                 </a>
+                
                 <div class="nav-menu">
                     <a href="#features" class="nav-link">Features</a>
-                    <a href="#how-it-works" class="nav-link">How it Works</a>
+                    <a href="#demo" class="nav-link">Demo</a>
                     <a href="#testimonials" class="nav-link">Reviews</a>
                     <a href="#pricing" class="nav-link">Pricing</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" target="_blank" class="nav-cta">
+                    <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" target="_blank" class="nav-cta" rel="noopener noreferrer">
                         <i class="fab fa-google-play"></i>
                         <span>Get App</span>
                     </a>
                 </div>
-                <button class="mobile-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                
+                <button class="mobile-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
+        <div class="hero-bg-pattern"></div>
         <div class="container">
-            <div class="hero-wrapper">
-                <div class="hero-content" data-aos="fade-up">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-up">
                     <div class="hero-badge">
                         <div class="badge-pulse"></div>
                         <i class="fas fa-sparkles"></i>
-                        <span>AI-Powered Cooking Assistant</span>
+                        <span>AI-Powered Recipe Generation</span>
                     </div>
+                    
                     <h1 class="hero-title">
-                        Cook Smarter with
+                        Cook Like a Pro with
                         <span class="text-gradient">AI-Generated Recipes</span>
                     </h1>
+                    
                     <p class="hero-subtitle">
                         Transform your cooking experience with personalized recipes, intelligent meal planning, and step-by-step guidance — all powered by advanced AI technology.
                     </p>
+                    
                     <div class="hero-stats">
-                        <div class="stat-item">
-                            <h3>1000+</h3>
+                        <div class="stat-item" data-count="1000">
+                            <h3>0+</h3>
                             <p>AI Recipes</p>
                         </div>
-                        <div class="stat-item">
-                            <h3>50+</h3>
-                            <p>Active Users</p>
+                        <div class="stat-item" data-count="50">
+                            <h3>0+</h3>
+                            <p>Happy Users</p>
                         </div>
                         <div class="stat-item">
                             <h3>4.8★</h3>
                             <p>User Rating</p>
                         </div>
                     </div>
+                    
                     <div class="hero-cta-group">
-                        <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" target="_blank" class="btn-primary">
+                        <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" target="_blank" class="btn-primary pulse-btn" rel="noopener noreferrer">
                             <i class="fab fa-google-play"></i>
-                            Download Now - It's Free
+                            <span>Download Free Now</span>
+                            <div class="btn-ripple"></div>
                         </a>
-                        <button class="btn-secondary" onclick="document.getElementById('demo-video').scrollIntoView({behavior: 'smooth'})">
+                        <button class="btn-secondary glass-btn" onclick="document.getElementById('phone-showcase').scrollIntoView({behavior: 'smooth'})">
                             <i class="fas fa-play-circle"></i>
-                            Watch Demo
+                            <span>Watch Demo</span>
                         </button>
                     </div>
-                    <p class="hero-note">
+                    
+                    <div class="hero-trust">
                         <i class="fas fa-shield-check"></i>
-                        No credit card required • Free to start
-                    </p>
-                </div>
-                <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
-                    <div class="phone-showcase">
-                        <div class="phone-frame">
-                            <img src="images/chat1.jpg" alt="ChefBit AI Chat Interface" class="phone-screen active">
-                            <img src="images/recipe.jpg" alt="Recipe Display" class="phone-screen">
-                            <img src="images/search1.jpg" alt="Search Feature" class="phone-screen">
-                        </div>
-                        <div class="feature-float f1">
-                            <i class="fas fa-robot"></i>
-                            <span>AI Assistant</span>
-                        </div>
-                        <div class="feature-float f2">
-                            <i class="fas fa-utensils"></i>
-                            <span>1000+ Recipes</span>
-                        </div>
-                        <div class="feature-float f3">
-                            <i class="fas fa-clock"></i>
-                            <span>Quick & Easy</span>
-                        </div>
+                        <span>Free to download • No credit card required • 4.8★ rating</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="hero-gradient"></div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
     </section>
 
-    <!-- Trust Indicators -->
-    <section class="trust-section">
+    <!-- Phone Showcase Section -->
+    <section id="phone-showcase" class="phone-showcase-section">
         <div class="container">
-            <div class="trust-wrapper">
-                <div class="trust-item">
-                    <i class="fas fa-users"></i>
-                    <span>Trusted by home cooks worldwide</span>
+            <div class="showcase-content" data-aos="fade-up">
+                <h2 class="section-title">Experience ChefBit in Action</h2>
+                <p class="section-subtitle">See how our AI transforms your cooking experience</p>
+                
+                <div class="phone-showcase-container">
+                    <!-- 3D Phone Mockup -->
+                    <div class="phone-3d" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <div class="swiper phone-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/chat1.jpg" alt="AI Chat Interface" loading="lazy">
+                                            <div class="slide-overlay">
+                                                <h3>Chat with AI Chef</h3>
+                                                <p>Ask anything about cooking</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/recipegenerationChat1.jpg" alt="Recipe Generation" loading="lazy">
+                                            <div class="slide-overlay">
+                                                <h3>Generate Recipes</h3>
+                                                <p>AI creates personalized recipes</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/search1.jpg" alt="Smart Search" loading="lazy">
+                                            <div class="slide-overlay">
+                                                <h3>Smart Search</h3>
+                                                <p>Find recipes by ingredients</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/recipe.jpg" alt="Recipe Display" loading="lazy">
+                                            <div class="slide-overlay">
+                                                <h3>Step-by-Step</h3>
+                                                <p>Clear cooking instructions</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/my kitchen.jpg" alt="My Kitchen" loading="lazy">
+                                            <div class="slide-overlay">
+                                                <h3>My Kitchen</h3>
+                                                <p>Save your favorites</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Feature Cards -->
+                        <div class="feature-float f1" data-aos="fade-left" data-aos-delay="400">
+                            <i class="fas fa-robot"></i>
+                            <span>AI Powered</span>
+                        </div>
+                        <div class="feature-float f2" data-aos="fade-right" data-aos-delay="600">
+                            <i class="fas fa-clock"></i>
+                            <span>Instant Results</span>
+                        </div>
+                        <div class="feature-float f3" data-aos="fade-left" data-aos-delay="800">
+                            <i class="fas fa-heart"></i>
+                            <span>Personalized</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="trust-item">
-                    <i class="fas fa-lock"></i>
-                    <span>Secure & Private</span>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-star"></i>
-                    <span>4.8/5 Average Rating</span>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-headset"></i>
-                    <span>24/7 Support</span>
+                
+                <!-- Quick Features Grid -->
+                <div class="quick-features" data-aos="fade-up" data-aos-delay="400">
+                    <div class="quick-feature">
+                        <div class="quick-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h4>AI Recipe Generation</h4>
+                    </div>
+                    <div class="quick-feature">
+                        <div class="quick-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Smart Ingredient Search</h4>
+                    </div>
+                    <div class="quick-feature">
+                        <div class="quick-icon">
+                            <i class="fas fa-bookmark"></i>
+                        </div>
+                        <h4>Save Favorites</h4>
+                    </div>
+                    <div class="quick-feature">
+                        <div class="quick-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Community Recipes</h4>
+                    </div>
                 </div>
             </div>
         </div>
@@ -154,95 +352,111 @@
     <section id="features" class="features">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-label">Features</span>
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Features</span>
+                </div>
                 <h2 class="section-title">Everything You Need to Cook with Confidence</h2>
-                <p class="section-subtitle">Discover how ChefBit transforms your cooking experience with AI-powered features</p>
+                <p class="section-subtitle">Discover powerful features that make cooking effortless and enjoyable</p>
             </div>
             
-            <div class="features-showcase">
-                <!-- AI Chat Feature -->
-                <div class="feature-block" data-aos="fade-up">
-                    <div class="feature-content">
-                        <div class="feature-icon">
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-header">
+                        <div class="feature-icon gradient-icon">
                             <i class="fas fa-robot"></i>
                         </div>
-                        <h3>AI Recipe Generation</h3>
-                        <p>Simply tell ChefAI what you're craving or what ingredients you have, and get personalized recipes instantly.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Personalized to your taste</li>
-                            <li><i class="fas fa-check"></i> Dietary restrictions supported</li>
-                            <li><i class="fas fa-check"></i> Instant recipe creation</li>
-                        </ul>
+                        <div class="feature-badge">AI Powered</div>
                     </div>
-                    <div class="feature-visual">
-                        <div class="phone-mockup">
-                            <img src="images/recipegenerationChat1.jpg" alt="AI Recipe Generation" class="feature-img">
-                            <img src="images/recipegenerationChat2.jpg" alt="AI Recipe Chat" class="feature-img-hover">
+                    <h3>AI Recipe Generation</h3>
+                    <p>Chat with our AI chef to get personalized recipes based on your preferences, dietary restrictions, and available ingredients.</p>
+                    <div class="feature-image">
+                        <img src="images/recipegenerationChat2.jpg" alt="AI Recipe Generation" loading="lazy">
+                    </div>
+                    <div class="feature-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Personalized suggestions</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Dietary restrictions support</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Smart Search Feature -->
-                <div class="feature-block reverse" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-content">
-                        <div class="feature-icon">
+                <!-- Feature 2 -->
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-header">
+                        <div class="feature-icon gradient-icon">
                             <i class="fas fa-search"></i>
                         </div>
-                        <h3>Smart Recipe Search</h3>
-                        <p>Find exactly what you're looking for with our intelligent search that understands ingredients, cuisines, and moods.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Search by ingredients</li>
-                            <li><i class="fas fa-check"></i> Filter by cuisine type</li>
-                            <li><i class="fas fa-check"></i> Mood-based suggestions</li>
-                        </ul>
+                        <div class="feature-badge">Smart Search</div>
                     </div>
-                    <div class="feature-visual">
-                        <div class="phone-mockup">
-                            <img src="images/search1.jpg" alt="Smart Search" class="feature-img">
-                            <img src="images/search2.jpg" alt="Search Results" class="feature-img-hover">
+                    <h3>Intelligent Recipe Search</h3>
+                    <p>Find recipes by ingredients you have, cuisine type, cooking time, or even your current mood. Our AI understands what you need.</p>
+                    <div class="feature-image">
+                        <img src="images/search2.jpg" alt="Smart Recipe Search" loading="lazy">
+                    </div>
+                    <div class="feature-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Ingredient-based search</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Mood-based recommendations</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Recipe Display Feature -->
-                <div class="feature-block" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-content">
-                        <div class="feature-icon">
+                <!-- Feature 3 -->
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-header">
+                        <div class="feature-icon gradient-icon">
                             <i class="fas fa-book-open"></i>
                         </div>
-                        <h3>Step-by-Step Guidance</h3>
-                        <p>Follow clear, detailed instructions with beautiful visuals that make cooking enjoyable and stress-free.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Clear instructions</li>
-                            <li><i class="fas fa-check"></i> Ingredient lists</li>
-                            <li><i class="fas fa-check"></i> Cooking tips included</li>
-                        </ul>
+                        <div class="feature-badge">Step-by-Step</div>
                     </div>
-                    <div class="feature-visual">
-                        <div class="phone-mockup">
-                            <img src="images/recipe2.jpg" alt="Recipe Display" class="feature-img">
-                            <img src="images/recipe3.jpg" alt="Recipe Details" class="feature-img-hover">
+                    <h3>Guided Cooking</h3>
+                    <p>Follow clear, detailed instructions with beautiful visuals. Never get lost in the kitchen again with our intuitive cooking guide.</p>
+                    <div class="feature-image">
+                        <img src="images/recipe3.jpg" alt="Step-by-step cooking guide" loading="lazy">
+                    </div>
+                    <div class="feature-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Clear instructions</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Visual cooking guide</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- My Kitchen Feature -->
-                <div class="feature-block reverse" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-content">
-                        <div class="feature-icon">
+                <!-- Feature 4 -->
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-header">
+                        <div class="feature-icon gradient-icon">
                             <i class="fas fa-bookmark"></i>
                         </div>
-                        <h3>Personal Recipe Collection</h3>
-                        <p>Save your favorite recipes and build your personal cookbook. Access them anytime, even offline.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Save favorites</li>
-                            <li><i class="fas fa-check"></i> Organize collections</li>
-                            <li><i class="fas fa-check"></i> Offline access</li>
-                        </ul>
+                        <div class="feature-badge">Personal</div>
                     </div>
-                    <div class="feature-visual">
-                        <div class="phone-mockup">
-                            <img src="images/my kitchen.jpg" alt="My Kitchen Feature" class="feature-img">
+                    <h3>My Kitchen Collection</h3>
+                    <p>Save your favorite recipes, create custom collections, and access them even offline. Build your personal digital cookbook.</p>
+                    <div class="feature-image">
+                        <img src="images/my kitchen.jpg" alt="Personal recipe collection" loading="lazy">
+                    </div>
+                    <div class="feature-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Offline access</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Custom collections</span>
                         </div>
                     </div>
                 </div>
@@ -251,82 +465,106 @@
     </section>
 
     <!-- How It Works -->
-    <section id="how-it-works" class="how-it-works">
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-label">How It Works</span>
+                <div class="section-badge">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>How It Works</span>
+                </div>
                 <h2 class="section-title">Start Cooking Smarter in 3 Simple Steps</h2>
             </div>
             
-            <div class="steps-wrapper">
-                <div class="step-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">
-                        <i class="fas fa-download"></i>
+            <div class="steps-timeline">
+                <div class="step-card" data-aos="fade-right" data-aos-delay="100">
+                    <div class="step-number">
+                        <span>1</span>
+                        <div class="step-pulse"></div>
                     </div>
-                    <h3>Download ChefBit</h3>
-                    <p>Get the app from Google Play Store and create your account in seconds with email OTP.</p>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>Download & Setup</h3>
+                        <p>Get ChefBit from Google Play Store and create your account in seconds with email OTP. It's completely free!</p>
+                    </div>
+                    <div class="step-line"></div>
                 </div>
                 
-                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">
-                        <i class="fas fa-comments"></i>
+                <div class="step-card" data-aos="fade-left" data-aos-delay="200">
+                    <div class="step-number">
+                        <span>2</span>
+                        <div class="step-pulse"></div>
                     </div>
-                    <h3>Chat with AI Chef</h3>
-                    <p>Tell our AI what you want to cook or what ingredients you have available.</p>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Chat with AI Chef</h3>
+                        <p>Tell our AI what you want to cook, what ingredients you have, or your dietary preferences. The AI understands natural language!</p>
+                    </div>
+                    <div class="step-line"></div>
                 </div>
                 
-                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <i class="fas fa-utensils"></i>
+                <div class="step-card" data-aos="fade-right" data-aos-delay="300">
+                    <div class="step-number">
+                        <span>3</span>
+                        <div class="step-pulse"></div>
                     </div>
-                    <h3>Cook & Enjoy</h3>
-                    <p>Follow the personalized recipe and enjoy your delicious homemade meal!</p>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Cook & Enjoy</h3>
+                        <p>Follow personalized recipes with step-by-step guidance. Save your favorites and become a better cook every day!</p>
+                    </div>
                 </div>
             </div>
             
-            <div class="cta-center" data-aos="fade-up" data-aos-delay="300">
-                <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" target="_blank" class="btn-primary large">
+            <div class="cta-center" data-aos="zoom-in" data-aos-delay="400">
+                <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" target="_blank" class="btn-primary glow-btn" rel="noopener noreferrer">
                     <i class="fab fa-google-play"></i>
-                    Start Your Culinary Journey
+                    <span>Start Your Culinary Journey</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Video Demo Section -->
-    <section id="demo-video" class="demo-section">
+    <!-- Demo Video Section -->
+    <section id="demo" class="demo-section">
+        <div class="demo-bg"></div>
         <div class="container">
-            <div class="demo-wrapper" data-aos="fade-up">
-                <div class="demo-content">
-                    <h2>See ChefBit in Action</h2>
-                    <p>Watch how ChefBit transforms your cooking experience with AI</p>
-                    <div class="demo-showcase">
-                        <div class="phone-carousel">
-                            <div class="carousel-track">
-                                <img src="images/chat1.jpg" alt="AI Chat">
-                                <img src="images/recipegenerationChat1.jpg" alt="Recipe Generation">
-                                <img src="images/recipe.jpg" alt="Recipe Display">
-                                <img src="images/search1.jpg" alt="Search Feature">
-                                <img src="images/my kitchen.jpg" alt="My Kitchen">
-                            </div>
+            <div class="demo-content" data-aos="fade-up">
+                <div class="section-header">
+                    <div class="section-badge light">
+                        <i class="fas fa-play"></i>
+                        <span>Live Demo</span>
+                    </div>
+                    <h2 class="section-title light">See ChefBit Transform Your Cooking</h2>
+                    <p class="section-subtitle light">Watch how our AI creates the perfect recipe for you</p>
+                </div>
+                
+                <div class="demo-video" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="video-placeholder">
+                        <div class="play-button" onclick="playDemo()">
+                            <i class="fas fa-play"></i>
                         </div>
-                        <div class="demo-features">
-                            <div class="demo-feature">
-                                <i class="fas fa-magic"></i>
-                                <span>AI-Powered Suggestions</span>
-                            </div>
-                            <div class="demo-feature">
-                                <i class="fas fa-bolt"></i>
-                                <span>Instant Recipe Generation</span>
-                            </div>
-                            <div class="demo-feature">
-                                <i class="fas fa-heart"></i>
-                                <span>Personalized Experience</span>
-                            </div>
-                        </div>
+                        <img src="images/chat2.jpg" alt="ChefBit Demo Video" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="demo-features" data-aos="fade-up" data-aos-delay="300">
+                    <div class="demo-feature">
+                        <i class="fas fa-magic"></i>
+                        <span>AI-Powered Suggestions</span>
+                    </div>
+                    <div class="demo-feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>Instant Recipe Generation</span>
+                    </div>
+                    <div class="demo-feature">
+                        <i class="fas fa-heart"></i>
+                        <span>Personalized Experience</span>
                     </div>
                 </div>
             </div>
@@ -337,69 +575,93 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-label">Testimonials</span>
+                <div class="section-badge">
+                    <i class="fas fa-heart"></i>
+                    <span>Testimonials</span>
+                </div>
                 <h2 class="section-title">Loved by Home Cooks Everywhere</h2>
+                <p class="section-subtitle">Join thousands of happy users who've transformed their cooking</p>
             </div>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"ChefBit has completely changed how I cook! The AI suggestions are spot-on, and I love how it uses ingredients I already have."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
+            <div class="testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper testimonial-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card glass-card">
+                                <div class="testimonial-header">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="testimonial-badge">Verified User</div>
+                                </div>
+                                <p>"ChefBit has completely changed how I cook! The AI suggestions are spot-on, and I love how it uses ingredients I already have. It's like having a personal chef in my pocket!"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=64&h=64&fit=crop&crop=face" alt="Priya S." loading="lazy">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Priya S.</h4>
+                                        <span>Home Chef, Mumbai</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="author-info">
-                            <h4>Priya S.</h4>
-                            <span>Home Chef, Mumbai</span>
+                        
+                        <div class="swiper-slide">
+                            <div class="testimonial-card glass-card">
+                                <div class="testimonial-header">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="testimonial-badge">Verified User</div>
+                                </div>
+                                <p>"As a busy professional, ChefBit saves me so much time. Quick recipes, clear instructions, and the AI chat is incredibly helpful. Best cooking app I've ever used!"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" alt="Rahul M." loading="lazy">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Rahul M.</h4>
+                                        <span>Software Engineer, Bangalore</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="testimonial-card glass-card">
+                                <div class="testimonial-header">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="testimonial-badge">Verified User</div>
+                                </div>
+                                <p>"Perfect for students like me! Budget-friendly recipes, easy to follow, and the AI helps me use whatever's in my mini-fridge. Absolutely love it!"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face" alt="Ananya K." loading="lazy">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Ananya K.</h4>
+                                        <span>College Student, Delhi</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"As a busy professional, ChefBit saves me so much time. Quick recipes, clear instructions, and the AI chat is like having a personal chef!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Rahul M.</h4>
-                            <span>Software Engineer, Bangalore</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Perfect for students like me! Budget-friendly recipes, easy to follow, and the AI helps me use whatever's in my mini-fridge."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Ananya K.</h4>
-                            <span>College Student, Delhi</span>
-                        </div>
-                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -409,13 +671,25 @@
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-label">Pricing</span>
+                <div class="section-badge">
+                    <i class="fas fa-tag"></i>
+                    <span>Pricing</span>
+                </div>
                 <h2 class="section-title">Choose Your Perfect Plan</h2>
-                <p class="section-subtitle">Start free and upgrade as you grow</p>
+                <p class="section-subtitle">Start free and upgrade as you grow your culinary skills</p>
             </div>
             
-            <div class="pricing-grid">
-                <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="pricing-toggle" data-aos="fade-up" data-aos-delay="100">
+                <span class="toggle-label">Monthly</span>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="pricing-toggle">
+                    <label for="pricing-toggle"></label>
+                </div>
+                <span class="toggle-label">Yearly <span class="savings">Save 20%</span></span>
+            </div>
+            
+            <div class="pricing-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="pricing-card glass-card">
                     <div class="plan-header">
                         <h3>Free</h3>
                         <div class="price">
@@ -423,6 +697,7 @@
                             <span class="amount">0</span>
                             <span class="period">/month</span>
                         </div>
+                        <p class="plan-desc">Perfect for beginners</p>
                     </div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check"></i> 10 ChefCoins monthly</li>
@@ -430,18 +705,23 @@
                         <li><i class="fas fa-check"></i> Save up to 5 recipes</li>
                         <li><i class="fas fa-check"></i> Email support</li>
                     </ul>
-                    <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" class="plan-cta">Get Started</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" class="plan-cta">Get Started Free</a>
                 </div>
                 
-                <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
-                    <div class="popular-badge">Most Popular</div>
+                <div class="pricing-card glass-card featured">
+                    <div class="popular-badge">
+                        <i class="fas fa-crown"></i>
+                        <span>Most Popular</span>
+                    </div>
                     <div class="plan-header">
                         <h3>Pro</h3>
                         <div class="price">
                             <span class="currency">₹</span>
-                            <span class="amount">99</span>
+                            <span class="amount monthly-price">99</span>
+                            <span class="amount yearly-price">79</span>
                             <span class="period">/month</span>
                         </div>
+                        <p class="plan-desc">For cooking enthusiasts</p>
                     </div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check"></i> 100 ChefCoins monthly</li>
@@ -453,14 +733,16 @@
                     <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" class="plan-cta featured">Upgrade to Pro</a>
                 </div>
                 
-                <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="pricing-card glass-card">
                     <div class="plan-header">
                         <h3>Ultra</h3>
                         <div class="price">
                             <span class="currency">₹</span>
-                            <span class="amount">199</span>
+                            <span class="amount monthly-price">199</span>
+                            <span class="amount yearly-price">159</span>
                             <span class="period">/month</span>
                         </div>
+                        <p class="plan-desc">For professional chefs</p>
                     </div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check"></i> Unlimited ChefCoins</li>
@@ -474,24 +756,33 @@
             </div>
             
             <div class="pricing-note" data-aos="fade-up" data-aos-delay="300">
-                <p><i class="fas fa-info-circle"></i> All plans include access to 1000+ recipes and basic features. Cancel anytime.</p>
+                <i class="fas fa-info-circle"></i>
+                <span>All plans include access to 1000+ recipes and basic features. Cancel anytime with no questions asked.</span>
             </div>
         </div>
     </section>
 
     <!-- Final CTA -->
     <section class="final-cta">
+        <div class="cta-bg"></div>
         <div class="container">
-            <div class="cta-wrapper" data-aos="zoom-in">
-                <div class="cta-content">
+            <div class="cta-content" data-aos="zoom-in">
+                <div class="cta-text">
                     <h2>Ready to Transform Your Cooking?</h2>
-                    <p>Join thousands of home cooks who are already cooking smarter with ChefBit</p>
+                    <p>Join thousands of home cooks who are already cooking smarter with ChefBit's AI-powered recipes</p>
+                    
                     <div class="cta-buttons">
-                        <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" target="_blank" class="btn-primary large">
+                        <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" target="_blank" class="btn-primary mega-btn" rel="noopener noreferrer">
                             <i class="fab fa-google-play"></i>
-                            Download ChefBit Now
+                            <span>Download ChefBit Now</span>
+                            <div class="btn-glow"></div>
                         </a>
+                        <button class="btn-secondary glass-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>Back to Top</span>
+                        </button>
                     </div>
+                    
                     <div class="download-stats">
                         <div class="stat">
                             <i class="fas fa-download"></i>
@@ -499,33 +790,42 @@
                         </div>
                         <div class="stat">
                             <i class="fas fa-star"></i>
-                            <span>4.8 Rating</span>
+                            <span>4.8★ Rating</span>
                         </div>
                         <div class="stat">
                             <i class="fas fa-shield-alt"></i>
                             <span>100% Secure</span>
                         </div>
+                        <div class="stat">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Android & iOS</span>
+                        </div>
                     </div>
                 </div>
-                <div class="cta-visual">
-                    <img src="images/chefbit-bot.png" alt="ChefBit AI Assistant" class="cta-mascot">
+                
+                <div class="cta-mascot" data-aos="bounce" data-aos-delay="200">
+                    <img src="images/chefbit-bot.png" alt="ChefBit AI Mascot" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="images/logo-1.png" alt="ChefBit" class="footer-logo">
-                    <p>Your AI-powered cooking companion, making every meal a masterpiece.</p>
+                    <div class="footer-logo">
+                        <img src="images/logo-1.png" alt="ChefBit" loading="lazy">
+                        <span>ChefBit</span>
+                    </div>
+                    <p>Your AI-powered cooking companion, making every meal a masterpiece. Cook smarter, not harder.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 
@@ -534,7 +834,7 @@
                     <ul>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#how-it-works">How it Works</a></li>
+                        <li><a href="#demo">Demo</a></li>
                         <li><a href="#testimonials">Reviews</a></li>
                     </ul>
                 </div>
@@ -553,7 +853,7 @@
                     <h4>Support</h4>
                     <ul>
                         <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="mailto:info@chefbit.in">Contact Us</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
@@ -561,17 +861,18 @@
                 
                 <div class="footer-newsletter">
                     <h4>Stay Updated</h4>
-                    <p>Get cooking tips and updates</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email" required>
+                    <p>Get cooking tips, new recipes, and app updates delivered to your inbox</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required aria-label="Email Address">
                         <button type="submit">Subscribe</button>
                     </form>
+                    <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2024 ChefBit by S2P2 Creations. All rights reserved.</p>
-                <p>Made with ❤️ in Kolkata, India</p>
+                <p>Made with ❤️ in Kolkata, India 🇮🇳</p>
             </div>
         </div>
     </footer>
@@ -579,25 +880,35 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
         <div class="mobile-menu-header">
-            <img src="images/logo-1.png" alt="ChefBit" class="mobile-logo">
-            <button class="mobile-close">
+            <div class="mobile-logo">
+                <img src="images/logo-1.png" alt="ChefBit" loading="lazy">
+                <span>ChefBit</span>
+            </div>
+            <button class="mobile-close" aria-label="Close Mobile Menu">
                 <i class="fas fa-times"></i>
             </button>
         </div>
         <div class="mobile-menu-content">
-            <a href="#features">Features</a>
-            <a href="#how-it-works">How it Works</a>
-            <a href="#testimonials">Reviews</a>
-            <a href="#pricing">Pricing</a>
-            <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" target="_blank" class="mobile-cta">
+            <a href="#features" class="mobile-link">Features</a>
+            <a href="#demo" class="mobile-link">Demo</a>
+            <a href="#testimonials" class="mobile-link">Reviews</a>
+            <a href="#pricing" class="mobile-link">Pricing</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+            <a href="https://play.google.com/store/apps/details?id=com.chefbit.in" target="_blank" class="mobile-cta" rel="noopener noreferrer">
                 <i class="fab fa-google-play"></i>
-                Download App
+                <span>Download App</span>
             </a>
         </div>
     </div>
 
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 
